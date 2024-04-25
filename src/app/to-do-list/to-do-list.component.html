@@ -1,0 +1,34 @@
+<div *ngIf="!isEditing">
+    <div *ngFor="let x of toDoItems">
+        <mat-card style="margin-top: 5px;">
+            <mat-card-content style="display:flex; justify-content: space-between;align-items: center;">                
+                <div *ngIf="x.completed" style="color: green;padding-left: 30px;">{{x.title}}</div>
+                <div *ngIf="!x.completed" style="color: red;padding-left: 30px;">{{x.title}}</div>
+                <div style="padding-right: 30px;">
+                    <mat-icon style="padding-right: 10px;" (click)="updateToDo(x.id)">edit</mat-icon>
+                    <mat-icon (click)="delete(x.id)">delete</mat-icon>
+                </div>
+                </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+<div *ngIf="isEditing">
+    <form class="my-form" (ngSubmit)="onUpdate()">
+        <div class="form-group">
+            <label for="id">Task Name: {{updateItem.title}} <br> Task ID: {{updateItem.id}}</label>
+        </div>
+        <div class="form-group">
+            <label for="title">Updated task name <span class="required" style="color:red;">*</span></label>
+            <input type="text" id="title" name="title" [(ngModel)]="formData.title"/>
+        </div>
+        <div class="form-group">
+            <label for="radio">Completed</label>
+            <mat-radio-group type="radio" id="completed" name="completed" [(ngModel)]="formData.completed">
+                <mat-radio-button value="true">Yes</mat-radio-button>
+                <mat-radio-button value="false">No</mat-radio-button>
+            </mat-radio-group>
+            <button type="submit" class="button-submit">Update</button>
+            <button type="submit" class="button-submit" (click)="onClose()">Close</button>
+        </div>
+    </form>
+</div>

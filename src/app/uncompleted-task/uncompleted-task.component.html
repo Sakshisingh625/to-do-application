@@ -1,0 +1,10 @@
+<button style="top: 60px;margin-left: 95%; margin-top: 5px; color: white;background-color: #0056b3;border: none;" (click)="onBack()">Back</button>
+<div *ngFor="let x of toDoItems">
+    <div *ngIf="!x.completed">
+        <mat-card style="margin-top: 5px;">
+            <mat-card-content style="display:flex; justify-content: space-between;align-items: center;">
+                <div style="color: red;padding-left: 30px;">{{x.title}}</div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

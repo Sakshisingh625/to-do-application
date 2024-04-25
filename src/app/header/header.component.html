@@ -1,0 +1,22 @@
+<div>
+    <mat-toolbar color="primary">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home" style="padding-left: 10px; 
+        padding-right: 5px;"></mat-icon>
+        <span style="padding-left: 15px;">To Do</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+       (click)="createToDo()">
+        <mat-icon>add</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"
+      (click)="onDone()">
+        <mat-icon>done</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"
+      (click)="onNotDone()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-toolbar>
+</div>
+  
+  

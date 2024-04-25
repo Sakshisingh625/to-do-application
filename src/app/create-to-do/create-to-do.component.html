@@ -1,0 +1,15 @@
+    <form class="my-form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="title">Task name <span class="required" style="color:red;">*</span></label>
+            <input type="text" id="title" name="title" placeholder="Task Name" [(ngModel)]="formData.title"/>
+        </div>
+        <div class="form-group">
+            <label for="radio">Completed</label>
+            <mat-radio-group id="completed" name="completed" [(ngModel)]="formData.completed">
+                <mat-radio-button value="true">Yes</mat-radio-button>
+                <mat-radio-button value="false">No</mat-radio-button>
+            </mat-radio-group>
+            <button type="submit" class="button-submit">Submit</button>
+            <button type="close" class="button-submit" (click)="onClose()">Close</button>
+        </div>
+    </form>
